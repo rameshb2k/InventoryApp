@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".InventoryEditorActivity">
+<!-- Layout for the editor -->
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin">
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/inventory_overview"
+            style="@style/CategoryStyle" />
+        <!-- Name field -->
+        <EditText
+            android:id="@+id/edit_inventory_name"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:hint="@string/hint_inventory_name"
+            android:inputType="textCapWords"
+            style="@style/EditorFieldStyle" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/inventory_price"
+            style="@style/CategoryStyle" />
+            <!-- Price field -->
+            <EditText
+                android:id="@+id/edit_inventory_price"
+                android:hint="@string/hint_inventory_price"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:paddingLeft="4dp"
+                style="@style/EditorFieldStyle" />
+
+    </LinearLayout>
+
+    <!-- Gender category -->
+    <LinearLayout
+        android:id="@+id/container_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/category_image"
+            style="@style/CategoryStyle" />
+
+        <!-- Input field -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <!-- Gender drop-down spinner -->
+            <Spinner
+                android:id="@+id/spinner_image"
+                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:paddingRight="16dp"
+                android:spinnerMode="dropdown"/>
+            <ImageView
+                android:id="@+id/product_image"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:src="@drawable/ic_tomato" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Stock category -->
+    <LinearLayout
+        android:id="@+id/container_stock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/category_stock"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:paddingLeft="4dp">
+
+            <!-- Weight field -->
+            <TextView
+                android:id="@+id/edit_stock"
+                android:text="0"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                style="@style/EditorFieldStyle" />
+
+            <!-- Units for weight (kg) -->
+            <TextView
+                android:id="@+id/label_weight_units"
+                android:text="@string/unit_stock"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                style="@style/EditorUnitsStyle"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Modify Stock category -->
+    <LinearLayout
+        android:id="@+id/container_modify_stock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/modify"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:paddingLeft="4dp">
+
+            <!-- Weight increase/decrease field -->
+            <Button
+                android:id="@+id/decrease_stock"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text = "-"/>
+            <EditText
+                android:id="@+id/modify_stock_by"
+                android:hint="@string/hint_stock"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:inputType="number"
+                style="@style/EditorFieldStyle" />
+
+            <Button
+                android:id="@+id/increase_stock"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text = "+"/>
+        </LinearLayout>
+    </LinearLayout>
+
+<!-- Supplier Fields -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/supplier"
+            style="@style/CategoryStyle" />
+        <!-- Name field -->
+        <EditText
+            android:id="@+id/edit_supplier_name"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:hint="@string/hint_supplier_name"
+            android:inputType="textCapWords"
+            style="@style/EditorFieldStyle" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/supplier_email"
+            style="@style/CategoryStyle" />
+        <!-- Name field -->
+        <EditText
+            android:id="@+id/edit_supplier_email"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:hint="@string/hint_supplier_email"
+            android:inputType="textCapWords"
+            style="@style/EditorFieldStyle" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="Order Item"
+            style="@style/CategoryStyle" />
+        <!-- Name field -->
+        <Button
+            android:id="@+id/order_button"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:text="CLICK TO ORDER"
+            android:inputType="textCapWords"
+            style="@style/EditorFieldStyle" />
+    </LinearLayout>
+</LinearLayout>
+
+</ScrollView>
